@@ -38,7 +38,7 @@ U32 UDS_GetTimeDiff(U32 *timer1msPrevious)
   timer1msCopy = UDS_timer1ms;
   if(timer1msCopy>=*timer1msPrevious)
   {
-    timer1msDiff = timer1msCopy - *timer1msPrevious;
+    timer1msDiff = timer1msCopy - *timer1msPrevious;//计算出差值
   }
   else
   {
@@ -63,8 +63,9 @@ int main(void)
   /* SysTick 1ms */
   SysTick_Config(9000);
   SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);
+  
   __disable_irq();
-  FLASH_Unlock();
+  FLASH_Unlock();//解锁flash
   EE_Init();
   U16 uwData;
   U16 uwData1;
@@ -72,11 +73,13 @@ int main(void)
   EE_ReadVariable(EXT_PROG_FLAG_ADDR, &uwData1);
   FLASH_Lock();
   __enable_irq();
+  
   /* Backup data register value is 0xA5A5 */
   if(uwData==0x5A5A && uwData1!=0x0001)
-	{
+{
     /* Wait 20ms until a specific CAN frame being received */
     while(task_states==CHECK_EXIT_PROG && UDS_timer1ms<=20);
+	
     if(task_states == ENTER_BOOTLOADER)
     {
       CanTxMsg TxMessage;
@@ -112,7 +115,7 @@ int main(void)
       task_states = RUN_APP;
     case RUN_APP:
       /* Test if user code is programmed starting from address "ApplicationAddress" */
-      if ((*(vu32*)ApplicationAddress & 0x2FFE0000 ) == 0x20000000)
+      if ((*(vu32*)ApplicationAddress & 0x2FFE0000 ) == 0x20000000)//取出flash中此地址存放的栈顶指针数据
       { /* Jump to user application */
         JumpAddress = *(vu32*) (ApplicationAddress + 4);
         Jump_To_Application = (pFunction) JumpAddress;

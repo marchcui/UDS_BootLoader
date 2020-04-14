@@ -26,9 +26,9 @@ Version: V1.0.0
 /* ECUSoftwareVersionNumber Èí¼þ°æ±¾ºÅ */
 #define S_ECU_SW                          0.0
 
-#define APP_FLAG_ADDR                     0x0001 /* 1 word */
-#define FP_ADDR_START                     0xF011 /* 10 word */
+#define APP_FLAG_ADDR                      0x0001 /* 1 word */
+#define FP_ADDR_START                      0xF011 /* 10 word */
 #define VIN_ADDR_START                    0xA000 /* 9 word */
-#define EXT_PROG_FLAG_ADDR                0xFFFE /* 1 word */
+#define EXT_PROG_FLAG_ADDR           0xFFFE /* 1 word */
 
 #endif /* _UDS_CONST_H_ */

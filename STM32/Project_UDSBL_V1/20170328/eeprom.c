@@ -60,6 +60,7 @@ static uint16_t EE_TransferVariable(uint16_t VirtAddress, uint32_t BaseAddress)
 /**
   * @brief  Restore the pages to a known good state in case of page's status
   *   corruption after a power loss.
+  *在断电后页面状态损坏时，将页面恢复到已知的良好状态。
   * @param  None.
   * @retval - Flash error code: on write Flash error
   *         - FLASH_COMPLETE: on success

@@ -12,13 +12,18 @@ Version: V1.0.0
 #ifndef _UDS_NWS_H_
 #define _UDS_NWS_H_
 
+/*
+为了在C++代码中调用用C写成的库文件，
+就需要用extern"C"来告诉编译器:这是一个用C写成的库文件，
+请用C的方式来链接它们
+*/
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
 /* Flow Control Flow Status definition */
-#define NWS_FS_CLEAR_TO_SEND          0U
-#define NWS_FS_WAIT                   1U
+#define NWS_FS_CLEAR_TO_SEND      0U
+#define NWS_FS_WAIT               	       1U
 #define NWS_FS_OVERFLOW               2U
 
 #define GET_MSG_RX(idx)               NWS->pUDS_CFGS[idx].pNWS_MSG->pMSG_RX
@@ -42,28 +47,40 @@ struct s_NWS{
 
 /* Read received message from CAN */
 UDS_ReturnError NWS_Receive(void *object, UDS_CANrxMsg_t *msg, U8 idxf);
+
 /* Stop TP message transmission */
 void NWS_AbortMsg(NWS_t *NWS, U8 msgIdx);
+
 /* Send CAN message */
 UDS_ReturnError NWS_SendFrame(UDS_CANtxBuf_t *buf);
+
 /* Message transmission buffer update */
 void NWS_SetTxMsgData(NWS_MSG_TX_t *pMsg, U8 *pData, U16 uwLen);
+
 /* Send a message using the Transport Protocol */
 UDS_ReturnError NWS_SendMsgData(NWS_t *NWS, U8 msgIdx);
+
 /* Initializes NWS */
 UDS_ReturnError NWS_Init(NWS_t **ppNWS);
+
 /* Processing NWS */
 UDS_ReturnError NWS_Process(NWS_t *NWS, U32 timeStamp);
+
 /* Message reception indication */
 UDS_ReturnError NWS_RxIndication(NWS_t *NWS, U8 msgIdx, N_Result_t Result);
+
 /* Message reception request */
 UDS_ReturnError NWS_RxRequest(NWS_t *NWS, U8 msgIdx);
+
 /* Message reception indication (long request) */
 UDS_ReturnError UDS_LongRxIndication(NWS_t *NWS);
+
 /* Message transmit confirm */
 UDS_ReturnError NWS_TxConfirm(NWS_t *NWS, U8 msgIdx, N_Result_t Result);
+
 /* Processing a message */
 void NWS_ReceiveMessage_Do(NWS_t *NWS, U8 msgIdx);
+
 /* Pesponse a message */
 void NWS_PesponseMessage(NWS_t *NWS, U8 msgIdx, UDS_CONST_STORAGE s_UDS_DSI *pDSI, U8 NRC);
 
