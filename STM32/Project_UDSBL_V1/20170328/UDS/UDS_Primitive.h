@@ -42,7 +42,7 @@ Version: V1.0.0
 *       - pre-programmed condition 
 */
 typedef struct{
-  U8 Session;
+  U8   Session;
   U16 P2CAN_Server_max;
   U16 EP2CAN_Server_max;
 #if USE_S3_SERVER
@@ -56,11 +56,11 @@ typedef struct{
   U8 DTCSet;
 #endif
 #if USE_SEC_ACCS
-  U8 SecureAccess;
+  U8   SecureAccess;
   U32 requestSeed;
   U32 requestSeedReceived;
-  U8 maxNumOfAttempts;
-  U8 numOfAttempts;
+  U8   maxNumOfAttempts;
+  U8   numOfAttempts;
   U32 requiredTimeDelay;
   U32 requiredTimeDelayCnt;
 #endif
@@ -69,7 +69,7 @@ typedef struct{
   UL_DL_STEP UL_DL_Step;
   U32 memorySize;
   U32 memorySizeCnt;
-  U8 blockSequenceCnt;
+  U8   blockSequenceCnt;
   U32 encryptingMethod;
 #endif
 #if USE_ROUTINE_CNTL
@@ -77,7 +77,7 @@ typedef struct{
   U8 PreProgCondition;
 #endif
 #if USE_RT_ERASEMEM
-  U8 FlashEraseFlag;
+  U8   FlashEraseFlag;
   U32 eraseMemoryAddress;
   U32 eraseMemorySize;
 #endif
@@ -94,7 +94,7 @@ typedef struct{
  */
 #if USE_RD_DATA_BYID
 typedef struct{
-  U8 Access;
+  U8   Access;
   U16 Ident;
   U8 (*pFunct)(U8 *pData, U16 *uwLen);
 }RDBI_t;
@@ -107,7 +107,7 @@ typedef struct{
  */
 #if USE_WR_DATA_BYID
 typedef struct{
-  U8 Access;
+  U8   Access;
   U16 Ident;
   U16 Len;
   U8 (*pFunct)(U8 *pData, U16 *uwLen);
@@ -121,9 +121,9 @@ typedef struct{
  */
 #if USE_ROUTINE_CNTL
 typedef struct{
-  U8 Access;
+  U8   Access;
   U16 Ident;
-  U8 bSecureAccess;
+  U8   bSecureAccess;
   U8 (*pFunct)(U8 *pData, U16 *uwLen);
 }Routine_t;
 #endif

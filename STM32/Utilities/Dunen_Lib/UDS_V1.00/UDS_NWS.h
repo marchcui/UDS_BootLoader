@@ -22,13 +22,13 @@ extern "C" {
 #endif /* __cplusplus */
 
 /* Flow Control Flow Status definition */
-#define NWS_FS_CLEAR_TO_SEND      0U
-#define NWS_FS_WAIT               	       1U
-#define NWS_FS_OVERFLOW               2U
+#define NWS_FS_CLEAR_TO_SEND    0U //CTS
+#define NWS_FS_WAIT               	      1U
+#define NWS_FS_OVERFLOW              2U
 
-#define GET_MSG_RX(idx)               NWS->pUDS_CFGS[idx].pNWS_MSG->pMSG_RX
+#define GET_MSG_RX(idx)              NWS->pUDS_CFGS[idx].pNWS_MSG->pMSG_RX
 #define GET_MSG_TX(idx)               NWS->pUDS_CFGS[idx].pNWS_MSG->pMSG_TX
-#define GET_MSG_TIM(idx)              NWS->pUDS_CFGS[idx].pNWS_MSG->pMSG_TIM
+#define GET_MSG_TIM(idx)             NWS->pUDS_CFGS[idx].pNWS_MSG->pMSG_TIM
 
 #define GET_CAN_RX(idx)               NWS->pUDS_CFGS[idx].pCANrxBuf
 #define GET_CAN_TX(idx)               NWS->pUDS_CFGS[idx].pCANtxBuf

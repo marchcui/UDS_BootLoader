@@ -107,6 +107,7 @@ int main(void)
   {
     task_states = ENTER_BOOTLOADER;
   }
+  
   while(1)
   {
     switch(task_states)
@@ -138,7 +139,7 @@ int main(void)
     case ENTER_BOOTLOADER:
       deskey("29650280",DE1);
       /* Init UDS */
-      UDS_Init(&UDS);
+      UDS_Init(&UDS); //UDS≥ı ºªØ
       if(uwData1 == 0x0001)
       {
         __disable_irq();

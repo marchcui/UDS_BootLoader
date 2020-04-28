@@ -884,9 +884,9 @@ UDS_ReturnError NWS_Init(NWS_t **ppNWS)
     m_N_PDU[i].Renew = UDS_FALSE;
     m_N_PDU[i].next = &m_N_PDU[(i+1)%N_PDU_RING_BUF_SIZE];
   }
-  NWS->pN_PDU_in = m_N_PDU;
+  NWS->pN_PDU_in    = m_N_PDU;
   NWS->pN_PDU_out = m_N_PDU;
-  NWS->pUDS_CFGS = UDS_CFGS_1;
+  NWS->pUDS_CFGS  = UDS_CFGS_1;
   NWS->pUDS_RX_LONG_RSP = &UDS_RX_LONG_RSP;
   
   /* Register Services */

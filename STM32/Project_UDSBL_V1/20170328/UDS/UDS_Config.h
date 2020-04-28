@@ -17,19 +17,19 @@ Version: V1.0.0
 *       Diagnostic Services Implementation Configuration
 *
 */
-/* Diagnostic and communication control functional unit */
+/* Diagnostic and communication control functional unit *///诊断和通信控制功能服务单元
 #define USE_DIAG_SESSN_CNTL    1 /* DiagnosticSessionControl (10 hex) */
-#define USE_ECU_RST                     1 /* ECUReset (11 hex) */
+#define USE_ECU_RST                      1 /* ECUReset (11 hex) */
 #define USE_SEC_ACCS                   1 /* SecurityAccess (27 hex) */
-#define USE_COMM_CNTL               1 /* CommunicationControl (28 hex) */
-#define USE_TSTER_PRST              1 /* TesterPresent (3E hex) */
-#define USE_ACCS_TIM_PARM      0 /* AccessTimingParameter (83 hex) */
-#define USE_SEC_DATA_TX            0 /* SecuredDataTransmission (84 hex) */
-#define USE_CNTL_DTC_SET          1 /* ControlDTCSetting (85 hex) */
-#define USE_RESP_ON_EVNT         0 /* ResponseOnEvent (86 hex) */
+#define USE_COMM_CNTL                1 /* CommunicationControl (28 hex) */
+#define USE_TSTER_PRST               1 /* TesterPresent (3E hex) */
+#define USE_ACCS_TIM_PARM       0 /* AccessTimingParameter (83 hex) */
+#define USE_SEC_DATA_TX             0 /* SecuredDataTransmission (84 hex) */
+#define USE_CNTL_DTC_SET           1 /* ControlDTCSetting (85 hex) */
+#define USE_RESP_ON_EVNT          0 /* ResponseOnEvent (86 hex) */
 #define USE_LINK_CNTL                 0 /* LinkControl (87 hex) */
 
-/* Data transmission functional unit */
+/* Data transmission functional unit *///数据传输功能单元
 #define USE_RD_DATA_BYID               1 /* ReadDataByIdentifier (22 hex) */
 #define USE_RD_MEM_BY_ADDR         0 /* ReadMemoryByAddress (23 hex) */
 #define USE_RD_SCAL_DATA_BYID    0 /* ReadScalingDataByIdentifier (24 hex) */
@@ -38,17 +38,17 @@ Version: V1.0.0
 #define USE_WR_DATA_BYID              1 /* WriteDataByIdentifier (2E hex) */
 #define USE_WR_MEM_BY_ADDR        0 /* WriteMemoryByAddress (3D hex) */
 
-/* Stored data transmission functional unit */
+/* Stored data transmission functional unit *///数据存储传输单元
 #define USE_CLR_DIAG_INFO           0 /* ClearDiagnosticInformation (14 hex) */
 #define USE_RD_DTC_INFO               0 /* ReadDTCInformation (19 hex) */
 
-/* InputOutput control functional unit */
-#define USE_IN_OUT_CNTL_BYID        0 /* InputOutputControlByIdentifier (2F hex) */
+/* InputOutput control functional unit *///输入输出控制功能单元
+#define USE_IN_OUT_CNTL_BYID    0 /* InputOutputControlByIdentifier (2F hex) */
 
-/* Remote activation of routine functional unit */
+/* Remote activation of routine functional unit *///远程激活例程功能单元
 #define USE_ROUTINE_CNTL            1 /* RoutineControl (31 hex) */
 
-/* Upload Download functional unit */
+/* Upload Download functional unit *///上传下载功能单元
 #define USE_REQ_DOWNLOAD    1 /* RequestDownload (34 hex) */
 #define USE_REQ_UPLOAD          0 /* RequestUpload (35 hex) */
 #define USE_XFER_DATA             1 /* TransferData (36 hex) */
@@ -79,7 +79,7 @@ Version: V1.0.0
 
 /*******************************************************************************
 *
-*       ReadDataByIdentifier Configuration
+*       ReadDataByIdentifier Configuration 由标识符读取数据配置
 *
 */
 #define USE_RDBI_FINGERPRINT    1
@@ -97,7 +97,7 @@ Version: V1.0.0
 *       WriteDataByIdentifier Configuration
 *
 */
-#define USE_WDBI_FINGERPRINT    1
+#define USE_WDBI_FINGERPRINT    1 //fingerprint
 #define WDBI_MAX                             USE_WDBI_FINGERPRINT
 
 /*******************************************************************************
@@ -116,11 +116,11 @@ Version: V1.0.0
 #define USE_CAN_FRAME_DATA_OPT      UDS_FALSE
 
 #define NWS_TICK_RATE_HZ            1000U
-#define NWS_MS(n)                   (n*NWS_TICK_RATE_HZ/1000)
+#define NWS_MS(n)                   (n*NWS_TICK_RATE_HZ/1000) //TP层或者网络层调度的时间
 
 #define UDS_MASTER                  UDS_FALSE
 
-/* SecurityAccess encryption parameter */
+/* SecurityAccess encryption parameter *///安全访问服务的加密参数
 #define ECU_MASK1                   0x324D4320
 #define ECU_MASK2                   0x20434D32
 
@@ -147,7 +147,7 @@ typedef enum {
 } NWS_MsgIdx_t;
 
 /* Request1 */
-#define NWS_REQ1_DBR_MAX            4095
+#define NWS_REQ1_DBR_MAX            4095 //TP层或者网络层最大发送的数据量为4096字节
 
 #define REQ1_ADDR_FORMAT    NORMAL_ADDR
 #define REQ1_MTYPE                   DIAG_TYPE //报文类型
@@ -168,13 +168,13 @@ typedef enum {
 #define REQ2_IDENT                    0x600
 #define REQ2_MASK                     0x7FF
 #define REQ2_BS                          0
-#define REQ2_STMIN                    0
+#define REQ2_STMIN                   0
 
 /* Response1 */
-#define NWS_RSP1_DBT_MAX            100
+#define NWS_RSP1_DBT_MAX    100
 
 #define RSP1_ADDR_FORMAT    NORMAL_ADDR
-#define RSP1_MTYPE                   DIAG_TYPE
+#define RSP1_MTYPE                   DIAG_TYPE  //诊断类型
 #define RSP1_BEXTID                  UDS_FALSE
 #define RSP1_N_TATYPE             PHY_ADDR
 #define RSP1_IDENT                    0x6d2

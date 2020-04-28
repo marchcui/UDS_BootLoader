@@ -47,7 +47,7 @@ UDS_ReturnError UDS_Init(UDS_t **ppUDS)
 */
 UDS_ReturnError UDS_Process(UDS_t *UDS, U32 timeStamp)
 {
-  NWS_Process(UDS->NWS, timeStamp);
-  UDS_APP_Process(timeStamp);
+  NWS_Process(UDS->NWS, timeStamp); //TP层或者网络层处理
+  UDS_APP_Process(timeStamp); //UDS上层处理
   return UDS_ERROR_NO;
 }

@@ -21,7 +21,7 @@ Version: V1.0.0
 
 /* APP STATES */
 typedef enum {
-  CHECK_EXIT_PROG = 0,
+  CHECK_EXIT_PROG = 0, //
   RUN_APP,
   ENTER_BOOTLOADER,
   RUN_BOOTLOADER,
