@@ -411,11 +411,11 @@ typedef struct {
 
 /* ISO 14229-2 7.3 */
 typedef struct sN_PDU{
-  U8 Renew;
-  U8 idx;
+  U8   Renew;
+  U8   idx;
   U32 Id;
-  U8 Data[8];
-  U8 DLC;
+  U8   Data[8];
+  U8   DLC;
   struct sN_PDU *next;
 } N_PDU_t;
 
@@ -729,7 +729,7 @@ typedef struct
   U8 (*pLongRspCb)(U8 *pData, U16 *uwLen);
   U32 uRspPendingMax;
   U32 uRspPendingCnt;
-  UDS_CONST_STORAGE s_UDS_DSI *dsi;
+  UDS_CONST_STORAGE s_UDS_DSI *dsi;//诊断服务实现结构体
   U32 nrc78Time;
   U32 nrc78TimeCnt;
 }UDS_RX_LONG_RSP_t;

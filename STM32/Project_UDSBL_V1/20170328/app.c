@@ -147,7 +147,7 @@ int main(void)
         EE_WriteVariable(EXT_PROG_FLAG_ADDR, 0x0000);
         FLASH_Lock();
         __enable_irq();
-        UDS->UDS_RAM->Session = ECU_PROG_SESSN;
+        UDS->UDS_RAM->Session = ECU_PROG_SESSN;//当前会话设置成编程会话
         UDS->UDS_RAM->PreProgCondition = UDS_TRUE;
       }
       timer1msPrevious = UDS_timer1ms;

@@ -24,20 +24,27 @@ Version: V1.0.0
 *
 * @note memorySize
 *       - memorySize of RequestDownload service
+*
 *       memorySizeCnt
 *       - memorySize count for TransferData service run time
+*
 *       blockSequenceCnt
 *       - blockSequence count for TransferData service run time
+*
 *       resetType
 *       - resetType of ECUReset service
+*
 *       Session
 *       - Session of DiagnosticSessionControl service
+*
 *       P2CAN_Server_max
 *       - Default P2CAN_Server_max timing supported by the server for 
 *       the activated diagnostic session. 0ms~65535ms Resolution 1ms
+*
 *       EP2CAN_Server_max
 *       - Enhanced (NRC 78 hex) P2CAN_Server_max timing supported by the  
 *       server for the activated diagnostic session. 0ms~655350ms Resolution 10ms
+*
 *       PreProgCondition
 *       - pre-programmed condition 
 */

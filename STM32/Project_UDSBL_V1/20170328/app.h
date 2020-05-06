@@ -21,10 +21,10 @@ Version: V1.0.0
 
 /* APP STATES */
 typedef enum {
-  CHECK_EXIT_PROG = 0, //
-  RUN_APP,
-  ENTER_BOOTLOADER,
-  RUN_BOOTLOADER,
+  CHECK_EXIT_PROG = 0, //检测是否退出程序
+  RUN_APP, //运行APP程序
+  ENTER_BOOTLOADER, //进入BootLoader
+  RUN_BOOTLOADER, //运行BootLoader
 } TASK_STATES;
 
 extern volatile TASK_STATES task_states;

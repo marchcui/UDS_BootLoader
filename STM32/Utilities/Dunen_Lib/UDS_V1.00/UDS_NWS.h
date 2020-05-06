@@ -41,8 +41,8 @@ typedef struct s_NWS NWS_t;
 struct s_NWS{
   UDS_CONST_STORAGE s_UDS_CFGS *pUDS_CFGS;
   UDS_RX_LONG_RSP_t *pUDS_RX_LONG_RSP;
-  N_PDU_t *pN_PDU_in;
-  N_PDU_t *pN_PDU_out;
+  N_PDU_t *pN_PDU_in; //接收的网络层协议数据单元结构体
+  N_PDU_t *pN_PDU_out; //发送的网络层协议数据单元结构体
 };
 
 /* Read received message from CAN */

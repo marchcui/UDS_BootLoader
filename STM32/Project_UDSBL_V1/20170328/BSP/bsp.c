@@ -103,10 +103,10 @@ void STM_BSP_CAN1Init(u16 CANbitRate)
   CAN_ITConfig(CAN1,CAN_IT_FMP0,ENABLE); 
   
   CAN_ITConfig(CAN1, CAN_IT_EWG, ENABLE); /* Enable Error warning interrupt */
-	CAN_ITConfig(CAN1, CAN_IT_EPV, ENABLE); /* Enable Error passive interrupt */
-	CAN_ITConfig(CAN1, CAN_IT_ERR, ENABLE); /* Enable Error interrupt */
-	CAN_ITConfig(CAN1, CAN_IT_BOF, ENABLE); /* Enable Bus off interrupt */
-	CAN_ITConfig(CAN1, CAN_IT_LEC, ENABLE); /* Enable Last Error code interrupt */
+  CAN_ITConfig(CAN1, CAN_IT_EPV, ENABLE); /* Enable Error passive interrupt */
+  CAN_ITConfig(CAN1, CAN_IT_ERR, ENABLE); /* Enable Error interrupt */
+  CAN_ITConfig(CAN1, CAN_IT_BOF, ENABLE); /* Enable Bus off interrupt */
+  CAN_ITConfig(CAN1, CAN_IT_LEC, ENABLE); /* Enable Last Error code interrupt */
 }
 
 /**
