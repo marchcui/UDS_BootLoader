@@ -18,7 +18,7 @@ Version: V1.0.0
 #if USE_WR_DATA_BYID
 
 /**
-* Find_Wdbi
+* Find_Wdbi --WriteDataByIdentifier
 *
 * @param WdbiIdent - Wdbi Identifier.
 *        errCode - Pointer to errCode.
