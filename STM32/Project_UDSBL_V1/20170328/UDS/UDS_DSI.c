@@ -306,7 +306,7 @@ U8 CommunicationControl(UDS_CONST_STORAGE s_UDS_DSI *pDSI, U8 *pData, U16 *uwLen
       }
       else
       {
-        return REQ_OR;
+        return REQ_OR;//requestOutOfRange 
       }
     }
     else if(SubFunc==DIS_RX_TX)
@@ -657,6 +657,7 @@ U8 RoutineControl(UDS_CONST_STORAGE s_UDS_DSI *pDSI, U8 *pData, U16 *uwLen)
   U8 errCode;
   U16 routineIdentifier = ((U16)pData[2]<<8)+(U16)pData[3];
   UDS_CONST_STORAGE Routine_t *pRoutine = Find_Routine(routineIdentifier, &errCode);
+  
   if(pRoutine && pRoutine->pFunct)
   {
     /* 1. The routine does not need to secure access,
@@ -711,7 +712,7 @@ U8 RequestDownload(UDS_CONST_STORAGE s_UDS_DSI *pDSI, U8 *pData, U16 *uwLen)
     return SCY_ACCS_DENY;
 #endif
   if(*uwLen<5 || *uwLen>11)
-    return INCORR_MSG_LEN_O_INVLD_FM;
+    return INCORR_MSG_LEN_O_INVLD_FM; //incorrectMessageLengthOrInvalidFormat
 #if USE_ROUTINE_CNTL && USE_RT_ERASEMEM
   if(UDS_RAM.FlashEraseFlag)
     return UL_DL_NOT_ACCEPT;
@@ -722,7 +723,7 @@ U8 RequestDownload(UDS_CONST_STORAGE s_UDS_DSI *pDSI, U8 *pData, U16 *uwLen)
   and the low nibble specifies the "encryptingMethod". */
   U8 DFI = pData[1];
   if(DFI!=0x00 && DFI!=0x01)
-    return REQ_OR;
+    return REQ_OR;//requestOutOfRange
   UDS_RAM.encryptingMethod = DFI&0x0F;
   U8 ALFID = pData[2]; /* addressAndLengthFormatIdentifier */
   U8 SizeLen = ALFID>>4&0x0F;
@@ -792,7 +793,7 @@ U8 RequestDownload(UDS_CONST_STORAGE s_UDS_DSI *pDSI, U8 *pData, U16 *uwLen)
 * @return POS_RSP - positiveResponse
 *         INCORR_MSG_LEN_O_INVLD_FM - incorrectMessageLengthOrInvalidFormat
 *         REQ_SEQ_ERR - requestSequenceError
-*         REQ_OR - requestOutOfRange
+*         REQ_OR           - requestOutOfRange
 *         XFER_DATA_SUS - transferDataSuspended
 *         GEN_PROG_FAIL - GeneralProgrammingFailure
 *         WRONG_BLOCK_SEQ_COUNT - wrongBlockSequenceCounter

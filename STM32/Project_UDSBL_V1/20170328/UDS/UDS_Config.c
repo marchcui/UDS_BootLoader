@@ -98,7 +98,7 @@ UDS_CONST_STORAGE s_UDS_ROM UDS_ROM = {
 #if USE_ROUTINE_CNTL
   {
     /* Routine CheckPreProg */
-#if USE_RT_CHECKPREPROG
+#if USE_RT_CHECKPREPROG //ºÏ≤È‘§±‡“ÎÃıº˛
     {ACCS_EXT_DIAG, 0x0202, 0, RoutineCheckPreProg},
 #endif
     /* Routine EraseMem */

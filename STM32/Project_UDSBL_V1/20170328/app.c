@@ -74,7 +74,8 @@ int main(void)
   FLASH_Lock();
   __enable_irq();
   
-  /* Backup data register value is 0xA5A5 */
+  /* Backup data register value is 0xA5A5 *///说明应用程序有效
+  //等待上位机请求BootLoader 模式,若没有则运行app
   if(uwData==0x5A5A && uwData1!=0x0001)
 {
     /* Wait 20ms until a specific CAN frame being received */

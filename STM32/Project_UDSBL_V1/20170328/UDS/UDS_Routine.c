@@ -100,7 +100,7 @@ U8 RoutineCheckPreProg(U8 *pData, U16 *uwLen)
   }
   else
   {
-    return REQ_OR;
+    return REQ_OR;//requestOutOfRange
   }
   return POS_RSP;
 }
@@ -194,8 +194,8 @@ U8 RoutineCheckProgIntegrity(U8 *pData, U16 *uwLen)
       /* To do something */
       __disable_irq();
       FLASH_Unlock();
-      EE_WriteVariable(APP_FLAG_ADDR, 0x5A5A);
-      EE_WriteVariable(EXT_PROG_FLAG_ADDR, 0x0000);
+      EE_WriteVariable(APP_FLAG_ADDR, 0x5A5A);//表示更新的APP是完整的
+      EE_WriteVariable(EXT_PROG_FLAG_ADDR, 0x0000);//
       FLASH_Lock();
       __enable_irq();
       pData[4] = ROUTINE_CORR_RSLT; /* routineStatusRecord */
