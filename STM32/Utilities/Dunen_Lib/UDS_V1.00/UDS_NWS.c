@@ -1059,7 +1059,7 @@ UDS_ReturnError NWS_CheckReceive(NWS_t *NWS)
 {
   if(NWS->pN_PDU_out->Renew == UDS_TRUE)
   {
-    if(NWS->pN_PDU_out->idx<NWS_MSG_MAX && NWS->pUDS_RX_LONG_RSP->uRspPendingCnt==0)
+    if(NWS->pN_PDU_out->idx<NWS_MSG_MAX && (NWS->pUDS_RX_LONG_RSP->uRspPendingCnt==0))
     {
       U8 N_PCI = NWS->pN_PDU_out->Data[RX_N_PCI_IDX(NWS->pN_PDU_out->idx)] & N_PCI_TYPE_MASK;
       switch(N_PCI)

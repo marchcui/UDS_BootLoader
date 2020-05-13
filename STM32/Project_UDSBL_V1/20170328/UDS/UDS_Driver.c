@@ -31,8 +31,7 @@ extern UDS_CONST_STORAGE s_UDS_CFGS UDS_CFGS_1[];  /* Services Information */
 * @date Jan. 23th 2017
 */
 UDS_ReturnError UDS_CANrxInit(UDS_CANrxBuf_t *rxBuffer, U8 idx,
-                              U32 ident, U32 mask, U8 rtr, U8 ide,
-                              void *object, 
+                              U32 ident, U32 mask, U8 rtr, U8 ide, void *object, 
                               UDS_ReturnError (*pFunct)(void *object, UDS_CANrxMsg_t *message, U8 idx))
 {
   UDS_ReturnError err = UDS_ERROR_NO;
