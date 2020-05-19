@@ -124,7 +124,7 @@ U8 DiagnosticSessionControl(UDS_CONST_STORAGE s_UDS_DSI *pDSI, U8 *pData, U16 *u
 #if USE_ROUTINE_CNTL && USE_RT_CHECKPREPROG
     if(UDS_RAM.Session==ECU_EXT_DIAG_SESSN && UDS_RAM.PreProgCondition==1)
 #else
-    if(UDS_RAM.Session==ECU_EXT_DIAG_SESSN)
+    if(UDS_RAM.Session==ECU_EXT_DIAG_SESSN)//À©Õ¹»á»°
 #endif
     {
       /* enter ECUProgrammingSession */

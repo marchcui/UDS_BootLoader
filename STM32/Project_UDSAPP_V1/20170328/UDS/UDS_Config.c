@@ -130,7 +130,7 @@ UDS_CONST_STORAGE s_UDS_ROM UDS_ROM = {
 #endif
   },
 #endif
-#if USE_WR_DATA_BYID
+#if USE_WR_DATA_BYID //WriteDataByIdentifier 0x2E
   {
     {ACCS_ALL, 0xF011, 19, WdbiFingerprint},
   },

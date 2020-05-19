@@ -592,7 +592,7 @@ U8 WriteDataByIdentifier(UDS_CONST_STORAGE s_UDS_DSI *pDSI, U8 *pData, U16 *uwLe
   if(*uwLen<=3)
     return INCORR_MSG_LEN_O_INVLD_FM;
   U16 dataIdentifier = ((U16)pData[1]<<8)+(U16)pData[2];
-  UDS_CONST_STORAGE WDBI_t *pWdbi = Find_Wdbi(dataIdentifier, &errCode);
+  UDS_CONST_STORAGE WDBI_t *pWdbi = Find_Wdbi(dataIdentifier, &errCode); //根据写标识符进行查找
   if(pWdbi && pWdbi->pFunct)
   {
     if(*uwLen != pWdbi->Len+3)
