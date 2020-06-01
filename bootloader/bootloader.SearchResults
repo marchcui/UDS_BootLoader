@@ -1,0 +1,12 @@
+---- task_states Matches (11 in 3 files) ----
+App.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):volatile TASK_STATES task_states = CHECK_EXIT_PROG;
+App.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):    while(task_states==CHECK_EXIT_PROG && UDS_timer1ms<=20);
+App.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):    if(task_states == ENTER_BOOTLOADER)
+App.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):    task_states = ENTER_BOOTLOADER;
+App.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):    switch(task_states)
+App.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):      task_states = RUN_APP;
+App.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):        task_states = ENTER_BOOTLOADER;
+App.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):      task_states = RUN_BOOTLOADER;
+App.h (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):extern volatile TASK_STATES task_states;
+Stm32f10x_it.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):  if(task_states == CHECK_EXIT_PROG)
+Stm32f10x_it.c (d:\st\mycode\uds_bootloader\stm32\project_udsbl_v1\20170328):        task_states = ENTER_BOOTLOADER;

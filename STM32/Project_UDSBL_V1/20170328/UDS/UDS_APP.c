@@ -99,6 +99,7 @@ UDS_ReturnError UDS_LongOperation_Process(void)
     {
       EE_WriteVariable(APP_FLAG_ADDR, 0x0000);
       UDS_RAM.FlashEraseFlag = 0;
+
     }
     FLASH_Lock();
     __enable_irq();

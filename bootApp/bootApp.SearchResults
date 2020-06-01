@@ -1,0 +1,19 @@
+---- UDS_ROM Matches (18 in 6 files) ----
+UDS_Config.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):UDS_CONST_STORAGE s_UDS_ROM UDS_ROM = {
+UDS_DSI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):  if(memoryAddress == UDS_ROM.driverAddress)
+UDS_DSI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):    if(memorySize>UDS_ROM.driverSizeMax)
+UDS_DSI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):  else if(memoryAddress == UDS_ROM.progAddress)
+UDS_DSI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):    if(memorySize>UDS_ROM.progSizeMax || memorySize==0)
+UDS_DSI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):  U32 blockLength = UDS_ROM.blockLengthMax; /* maxNumberOfBlockLength */
+UDS_DSI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):  if(*uwLen!=UDS_ROM.blockLengthMax && *uwLen!=2+UDS_RAM.memorySize-UDS_RAM.memorySizeCnt)
+UDS_Primitive.h (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):extern UDS_CONST_STORAGE s_UDS_ROM UDS_ROM;
+UDS_RDBI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):    if(UDS_ROM.Rdbi[i].Ident == RdbiIdent)
+UDS_RDBI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):      Rdbi = &UDS_ROM.Rdbi[i];
+UDS_Routine.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):    if(UDS_ROM.Routines[i].Ident == RoutineIdent)
+UDS_Routine.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):      routine = &UDS_ROM.Routines[i];
+UDS_Routine.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):      if(UDS_ROM.progAddress != UDS_RAM.eraseMemoryAddress
+UDS_Routine.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):         || UDS_RAM.eraseMemorySize > UDS_ROM.progSizeMax)
+UDS_Routine.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):      UDS_RAM.eraseMemoryAddress = UDS_ROM.progAddress;
+UDS_Routine.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):      UDS_RAM.eraseMemorySize = UDS_ROM.progSizeMax;
+UDS_WDBI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):    if(UDS_ROM.Wdbi[i].Ident == WdbiIdent)
+UDS_WDBI.c (d:\st\mycode\uds_bootloader\stm32\project_udsapp_v1\20170328\uds):      Wdbi = &UDS_ROM.Wdbi[i];
